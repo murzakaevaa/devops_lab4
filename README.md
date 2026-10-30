@@ -26,24 +26,26 @@
 - `index.html` — стартовая страница.
 
 
-## Скриншоты выполнения
+## Скриншоты выполнения (папка `скрины`)
 
-1. [Проверка crontab и IP на VM-1](screenshots/01-crontab-and-ip-vm1.png)
-2. [Пинг с VM-1 до VM-2](screenshots/02-ping-vm1-to-vm2.png)
-3. [Пинг в интернет (1.1.1.1)](screenshots/03-ping-internet.png)
-4. [Копирование SSH-ключа (ssh-copy-id)](screenshots/04-ssh-copy-id-success.png)
-5. [Вход по SSH без пароля](screenshots/05-ssh-login-without-password.png)
-6. [Вход по SSH без пароля (повтор)](screenshots/06-ssh-login-without-password.png)
-7. [Проверка sudo без пароля на VM-1](screenshots/07-sudo-su-vm1.png)
-8. [Проверка sudo без пароля на VM-2](screenshots/08-sudo-su-vm2.png)
-9. [Версия установленного Ansible](screenshots/09-ansible-version.png)
-10. [Содержимое inventory.ini](screenshots/10-inventory-content.png)
-11. [Содержимое playbook.yml (начало)](screenshots/11-inventory-content.png)
-12. [Содержимое index.html](screenshots/12-index-html-content.png)
-13. [Проверка связи Ansible с VM-2 (ping)](screenshots/13-ansible-ping-test.png)
-14. [Удаление nginx на VM-2 перед запуском](screenshots/14-nginx-removed-on-vm2.png)
-15. [Тестовый прогон плейбука (--check)](screenshots/15-check-mode-dry-run.png)
-16. [Боевой прогон плейбука (установка nginx)](screenshots/16-playbook-deploy-run.png)
-17. [Проверка работы веб-сервера (curl)](screenshots/17-curl-web-page-result.png)
-18. [Повторный прогон для проверки идемпотентности (changed=0)](screenshots/18-idempotency-run.png)
-19. [Результат в браузере - Hello from Ansible playbook!](screenshots/19-browser-hello.png)
+| Файл | Что изображено на скриншоте |
+| :--- | :--- |
+| `01-crontab-and-ip-vm1.png` | Проверка пустого crontab и IP-адреса 10.0.2.15 на VM-1 |
+| `02-ping-vm1-to-vm2.png` | Успешный пинг с VM-1 до VM-2 (0% потерь) |
+| `03-ping-internet.png` | Проверка доступа в интернет с VM-1 (пинг 1.1.1.1) |
+| `04-ssh-copy-id-success.png` | Копирование SSH-ключа пользователю runner на VM-2 |
+| `05-ssh-login-without-password.png` | Вход по SSH на VM-2 без ввода пароля (только по ключу) |
+| `06-ssh-login-without-password.png` | Повторный вход по SSH на VM-2 (отображается приветствие системы) |
+| `07-sudo-su-vm1.png` | Проверка прав sudo без пароля (вход в root) на VM-1 |
+| `08-sudo-su-vm2.png` | Проверка прав sudo без пароля (вход в root) на VM-2 |
+| `09-ansible-version.png` | Проверка версии установленного Ansible (core 2.16.3) |
+| `10-inventory-content.png` | Содержимое файла `inventory.ini` (список хостов) |
+| `11-inventory-content.png` | Содержимое файла `playbook.yml` (задачи по установке nginx) |
+| `12-index-html-content.png` | Содержимое файла `index.html` (страница с приветствием) |
+| `13-ansible-ping-test.png` | Проверка связи Ansible с VM-2 (модуль ping, ответ pong) |
+| `14-nginx-removed-on-vm2.png` | Удаление nginx на VM-2 перед демонстрацией работы плейбука |
+| `15-check-mode-dry-run.png` | Тестовый прогон плейбука с флагом `--check` (changed=1) |
+| `16-playbook-deploy-run.png` | Боевой прогон (реальная установка nginx, changed=1) |
+| `17-curl-web-page-result.png` | Проверка работы веб-сервера через консоль (curl) |
+| `18-idempotency-run.png` | Повторный прогон плейбука (changed=0, доказательство идемпотентности) |
+| `19-browser-hello.png` | Открытие страницы веб-сервера в браузере (`Hello from Ansible playbook!`) |

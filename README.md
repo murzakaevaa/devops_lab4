@@ -1,20 +1,20 @@
 # Lab 4. Ansible Basics (П04)
 
-## Что было сделано (по методичке)
+## Что было сделано
 1. Отключен cron-скрипт `weather.sh` из прошлой лабораторной работы.
 2. Клонирована первая VM во вторую с опцией «сгенерировать новые MAC-адреса».
 3. Создана и настроена общая сеть NAT (NatNetwork) с адресацией 10.0.2.0/24.
 4. Заданы статические IP-адреса для обеих машин (10.0.2.15 и 10.0.2.16).
 5. Создан пользователь `runner` с правами `sudo` без пароля на обеих VM.
-6. Настроен SSH-доступ по ключу с VM-1 на VM-2 (для пользователя `runner`).
-7. Установлен Ansible на первую VM (Control node).
+6. Настроен SSH-доступ по ключу с VM-1 на VM-2.
+7. Установлен Ansible на первую VM.
 8. Написан плейбук `playbook.yml` для установки веб-сервера Nginx.
 9. Написан файл `inventory.ini` с адресом второй VM.
 10. Создан шаблон `index.html` для деплоя.
-11. Выполнен тестовый прогон плейбука (`--check`).
+11. Выполнен тестовый прогон плейбука .
 12. Выполнен боевой прогон плейбука.
 13. Проверена работа веб-сервера с помощью `curl`.
-14. Продемонстрирована идемпотентность Ansible (повторный запуск не вносит изменений).
+14. Продемонстрирована идемпотентность Ansible .
 
 ## Файлы в репозитории
 - `inventory.ini` — инвентарный файл со списком хостов.
@@ -27,21 +27,21 @@
 | Файл | Что изображено на скриншоте |
 | :--- | :--- |
 | `01-crontab-and-ip-vm1.png` | Проверка пустого crontab и IP-адреса 10.0.2.15 на VM-1 |
-| `02-ping-vm1-to-vm2.png` | Успешный пинг с VM-1 до VM-2 (0% потерь) |
-| `03-ping-internet.png` | Проверка доступа в интернет с VM-1 (пинг 1.1.1.1) |
+| `02-ping-vm1-to-vm2.png` | Успешный пинг с VM-1 до VM-2  |
+| `03-ping-internet.png` | Проверка доступа в интернет с VM-1  |
 | `04-ssh-copy-id-success.png` | Копирование SSH-ключа пользователю runner на VM-2 |
-| `05-ssh-login-without-password.png` | Вход по SSH на VM-2 без ввода пароля (только по ключу) |
-| `06-ssh-login-without-password.png` | Повторный вход по SSH на VM-2 (отображается приветствие системы) |
-| `07-sudo-su-vm1.png` | Проверка прав sudo без пароля (вход в root) на VM-1 |
-| `08-sudo-su-vm2.png` | Проверка прав sudo без пароля (вход в root) на VM-2 |
-| `09-ansible-version.png` | Проверка версии установленного Ansible (core 2.16.3) |
-| `10-inventory-content.png` | Содержимое файла `inventory.ini` (список хостов) |
-| `11-inventory-content.png` | Содержимое файла `playbook.yml` (задачи по установке nginx) |
-| `12-index-html-content.png` | Содержимое файла `index.html` (страница с приветствием) |
-| `13-ansible-ping-test.png` | Проверка связи Ansible с VM-2 (модуль ping, ответ pong) |
+| `05-ssh-login-without-password.png` | Вход по SSH на VM-2 без ввода пароля |
+| `06-ssh-login-without-password.png` | Повторный вход по SSH на VM-2  |
+| `07-sudo-su-vm1.png` | Проверка прав sudo без пароля на VM-1 |
+| `08-sudo-su-vm2.png` | Проверка прав sudo без пароля на VM-2 |
+| `09-ansible-version.png` | Проверка версии установленного Ansible |
+| `10-inventory-content.png` | Содержимое файла `inventory.ini`|
+| `11-inventory-content.png` | Содержимое файла `playbook.yml`  |
+| `12-index-html-content.png` | Содержимое файла `index.html` |
+| `13-ansible-ping-test.png` | Проверка связи Ansible с VM-2  |
 | `14-nginx-removed-on-vm2.png` | Удаление nginx на VM-2 перед демонстрацией работы плейбука |
-| `15-check-mode-dry-run.png` | Тестовый прогон плейбука с флагом `--check` (changed=1) |
-| `16-playbook-deploy-run.png` | Боевой прогон (реальная установка nginx, changed=1) |
-| `17-curl-web-page-result.png` | Проверка работы веб-сервера через консоль (curl) |
-| `18-idempotency-run.png` | Повторный прогон плейбука (changed=0, доказательство идемпотентности) |
-| `19-browser-hello.png` | Открытие страницы веб-сервера в браузере (`Hello from Ansible playbook!`) |
+| `15-check-mode-dry-run.png` | Тестовый прогон плейбука с флагом `--check` |
+| `16-playbook-deploy-run.png` | Боевой прогон  |
+| `17-curl-web-page-result.png` | Проверка работы веб-сервера через консоль |
+| `18-idempotency-run.png` | Повторный прогон плейбука |
+| `19-browser-hello.png` | Открытие страницы веб-сервера в браузере|
